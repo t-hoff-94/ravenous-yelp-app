@@ -71,13 +71,14 @@ class SearchBar extends React.Component {
             {this.renderSortByOptions()}
           </ul>
         </div>
-        <div className="SearchBar-fields">
-          <input onChange={this.handleTermChange} placeholder="Search Businesses" />
-          <input onChange={this.handleLocationChange} placeholder="Where?" />
-        </div>
-        <div className="SearchBar-submit">
-          <a onClick={this.handleSearch} href="#">Let's Go</a>
-        </div>
+
+          <form className="SearchBar-fields" onSubmit={this.handleSearch}>
+            <input onChange={this.handleTermChange} placeholder="Search Businesses" />
+            <input onChange={this.handleLocationChange} placeholder="Where?" />
+            <div className="SearchBar-submit">
+            <button type="submit">Let's Go</button>
+            </div>
+          </form>
       </div>
     )
   }
